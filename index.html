@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="author" content="PyGrunn">
+
+    <title>PyGrunn</title>
+
+    <link rel="stylesheet" href="/theme/stylesheets/uikit.min.css" />
+    <link rel="stylesheet" href="/theme/stylesheets/uikit.addons.min.css" />
+    <link rel="stylesheet" href="/theme/stylesheets/jquery.fancybox.css" />
+    <link rel="stylesheet" href="/theme/stylesheets/style.css" />
+
+    <!-- Because of the dynamic PyGrunn year system, this is now here. Got a better idea? Create a pull-request. -->
+    <style>
+        /* Hi-res Logo */
+        @media only screen and (min--moz-device-pixel-ratio: 2),
+        only screen and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min-device-pixel-ratio: 2){
+            .uk-logo{
+                background-image: url('/theme/images/logos/pygrunn_logo_2015@2x.png');
+            }
+        }
+    </style>
+
+    <link rel="shortcut icon" href="/theme/images/favicon.ico">
+
+</head>
+
+<body>
+
+<div class="headerbar with-shadow">
+    <nav class="uk-navbar with-border">
+        <div class="uk-container uk-container-center">
+            <div class="uk-clearfix">
+                <a class="logo uk-float-left uk-display-block" data-uk-smooth-scroll style="background-image: url('/theme/images/logos/pygrunn_logo_2015.png');"></a>
+                <div class="uk-navbar-flip uk-visible-large">
+                    <ul class="uk-navbar-nav" data-uk-scrollspy-nav="{smoothscroll: {closest: 'li', offset: 81}}">
+                        <li class="uk-hidden"><a href="#fullscreen"></a></li>
+                        <li><a href="#speakers">speakers</a></li>
+                        <li><a href="#location">location</a></li>
+                        <li><a href="#tickets">tickets</a></li>
+                        <li><a href="#schedule">schedule</a></li>
+                        <li><a href="#sprints">sprints</a></li>
+                        <li><a href="#rfp">rfp</a></li>
+                        <li><a href="#sponsor">sponsor</a></li>
+                        <li><a href="#about">about</a></li>
+                    </ul>
+                </div>
+                <a class="uk-navbar-toggle uk-navbar-flip uk-hidden-large" data-uk-toggle="{target:'#offcanvasmenu'}"></a>
+                <div id="offcanvasmenu" class="uk-hidden uk-hidden-large">
+                    <div class="uk-offcanvasmenu-bar">
+                        <ul class="uk-navbar-nav" data-uk-scrollspy-nav="{smoothscroll: {closest: 'li', offset: 81}}">
+                            <li class="uk-hidden"><a href="#fullscreen"></a></li>
+                            <li><a href="#speakers">speakers</a></li>
+                            <li><a href="#location">location</a></li>
+                            <li><a href="#tickets">tickets</a></li>
+                            <li><a href="#schedule">schedule</a></li>
+                            <li><a href="#sprints">sprints</a></li>
+                            <li><a href="#rfp">rfp</a></li>
+                            <li><a href="#sponsor">sponsor</a></li>
+                            <li><a href="#about">about</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<div id="fullscreen" class="fullscreen" style="background-image: url('/theme/images/logos/top_artwork_2015.png'); background-position: center 80px;">
+    <div class="sponsor-images uk-hidden-small">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid uk-grid-small uk-grid-width-1-4 uk-grid-width-medium-1-4 uk-text-center">
+                <div>
+                    <a class="getlogic-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.getlogic.nl/" target="_blank">
+                        <span>Getlogic</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="paylogic-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.paylogic.com" target="_blank">
+                        <span>Paylogic</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="spindle-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.wearespindle.com/" target="_blank">
+                        <span>Spindle</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="media2b-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.media2b.net" target="_blank">
+                        <span>Media2B</span>
+                    </a>
+                </div>
+            </div>
+            <div class="uk-grid uk-grid-small uk-grid-width-1-5 uk-grid-width-medium-1-5 uk-text-center">
+                <div>
+                    <a class="maykin-media-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.maykinmedia.nl/en/" target="_blank">
+                        <span>Maykin Media</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="dmc-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.digitalmediacentre.com/" target="_blank">
+                        <span >DMC</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="voys-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.voys.nl/" target="_blank">
+                        <span >Voys</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="crop-r-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.crop-r.com/" target="_blank">
+                        <span >Crop-R</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="resello-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.resello.com/" target="_blank">
+                        <span >Resello</span>
+                    </a>
+                </div>
+            </div>
+            <div class="uk-grid uk-grid-small uk-grid-width-1-2 uk-grid-width-medium-1-2 uk-text-center">
+                <div>
+                    <a class="minddistrict-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.minddistrict.com/professional/" target="_blank">
+                        <span >Minddistrict</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="optiver-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.optiver.com/amsterdam/" target="_blank">
+                        <span>Optiver</span>
+                    </a>
+                </div>
+            </div>
+            <div class="uk-grid uk-grid-small uk-grid-width-1-5 uk-grid-width-medium-1-5 uk-text-center">
+                <div>
+                    <a class="academic-transfer-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="https://www.academictransfer.com/" target="_blank">
+                        <span>Academic Transfer</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="peperzaken-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="https://www.peperzaken.nl/" target="_blank">
+                        <span>Peperzaken</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="experty-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.experty.com/nl/" target="_blank">
+                        <span>Experty</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="and-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.and.com" target="_blank">
+                        <span>AND</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="launchcafe-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.launchcafe.nl" target="_blank">
+                        <span>Launchcafe</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="feature" class="block-large bg-dark">
+    <div class="uk-container uk-container-center">
+        <section class="feature uk-text-center text-contrast uk-text-large">
+            <p>PyGrunn is the "Python and friends" conference with<br />a local footprint and global mindset. Firmly rooted<br />in the open source culture, it aims to provide the<br />leading lights in advanced internet technologies, a<br />platform to inform, inspire and impress their peers.</p>
+            <p class="uk-margin-large-top">For all the latest info join our community on:</p>
+            <div class="social">
+                <a class="uk-icon-google-plus-square uk-vertical-align-middle uk-icon-small" href="https://plus.google.com/u/0/communities/100366363140062149195" title="Join us on Google Plus" target="_blank"></a>
+                <a class="uk-icon-twitter-square uk-vertical-align-middle uk-icon-small" href="https://twitter.com/PyGrunn" title="Follow us on Twitter" target="_blank"></a>
+                <a class="uk-icon-linkedin-square uk-vertical-align-middle uk-icon-small" href="https://www.linkedin.com/groups?gid=4197937" title="Join us on Linkedin" target="_blank"></a>
+            </div>
+        </section>
+    </div>
+</div>
+<div id="speakers" class="block with-border">
+    <div class="uk-container uk-container-center">
+        <section class="speakers">
+            <div class="uk-text-center"><i class="uk-icon-users uk-icon-large uk-icon-heading"></i></div>
+            <h1 class="uk-text-center uk-heading-large">Speakers 2015</h1>
+            <div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-4 uk-margin-large-top uk-text-center" data-uk-grid-margin data-uk-grid-match>
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/boaz_leskes.jpeg');"></div>
+                    <h2>Boaz Leskes</h2>
+                    <p class="uk-text-bold">Elastic Search (Keynote)</p>
+                    <a data-uk-modal="{target:'#bio-boaz-leskes'}">More information</a>
+                    <div id="bio-boaz-leskes" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/boaz_leskes.jpeg" alt="Boaz Leskes" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Boaz Leskes</span>
+                            <p class="uk-text-bold">Elastic Search (Keynote)</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Boaz Leskes' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/unknown.png');"></div>
+                    <h2>Lars de Ridder</h2>
+                    <p class="uk-text-bold">Advanced REST API's</p>
+                    <a data-uk-modal="{target:'#bio-lars-de-ridder'}">More information</a>
+                    <div id="bio-lars-de-ridder" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/unknown.png" alt="Lars de Ridder" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Lars de Ridder</span>
+                            <p class="uk-text-bold">Advanced REST API's</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Lars de Ridder' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/jens_de_smit.jpeg');"></div>
+                    <h2>Jens de Smit</h2>
+                    <p class="uk-text-bold">IPython and MongoDB as big data scratchpads</p>
+                    <a data-uk-modal="{target:'#bio-jens-de-smit'}">More information</a>
+                    <div id="bio-jens-de-smit" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/jens_de_smit.jpeg" alt="Jens de Smit" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Jens de Smit</span>
+                            <p class="uk-text-bold">IPython and MongoDB as big data scratchpads</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Jens de Smit' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/valentin_haenel.png');"></div>
+                    <h2>Valentin Haenel</h2>
+                    <p class="uk-text-bold">Blosc and friends</p>
+                    <a data-uk-modal="{target:'#bio-valentin-haenel'}">More information</a>
+                    <div id="bio-valentin-haenel" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/valentin_haenel.png" alt="Valentin Haenel" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Valentin Haenel</span>
+                            <p class="uk-text-bold">Blosc and friends</p>
+
+                            <p>Blosc is a fast metacodec two main features: the shuffle filter and threading.
+The shuffle filter, which is implemented using SSE2 instructions, allows
+reordering bytes to reduce the complexity of certain datasets. Threading, on
+the other hand, allows parallelization of existing codecs, hence the term
+<em>metacodec</em>. Blosc was originally conceived to mitigate the problem of starving
+CPUs which results from the ever growing divide between clock speed and memory
+latency. Recently, it has become increasingly useful for other scenarios too,
+for example, out-of-core approaches and compressed in-memory storage.  Blosc
+has a small codebase and is implemented in C. Additionally, several pieces of
+interesting software, largely written in Python, have emerged that make use of
+Blosc, showcasing it's potential and exploring the new use-cases. Bcolz, for
+example, is a compressed in-memory and out-of-core container for numerical
+data. This talk is about Blosc and it's Python friends.</p>
+
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>Valentin is a freelance software-engineer interested in compression, exploiting
+the memory hierarchy for accelerated computation and out-of-core compute
+engines. In the past, he has worked on psychophysics data analysis,
+large-scale brain simulations and analytical engines for business intelligence.
+also, he wrote a book about Git and has contributed to a diverse selection of
+open source projects. He currently resides in Berlin and is the co-organizeer
+the regular PyData-Berlin meetups and conferences.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/laurence_de_jong.jpeg');"></div>
+                    <h2>Laurence de Jong</h2>
+                    <p class="uk-text-bold">Towards a web framework for distributed apps</p>
+                    <a data-uk-modal="{target:'#bio-laurence-de-jong'}">More information</a>
+                    <div id="bio-laurence-de-jong" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/laurence_de_jong.jpeg" alt="Laurence de Jong" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Laurence de Jong</span>
+                            <p class="uk-text-bold">Towards a web framework for distributed apps</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Laurence de Jong' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/nicky_van_foreest.jpeg');"></div>
+                    <h2>Nicky van Foreest</h2>
+                    <p class="uk-text-bold">Simulation and optimization of business processes with python</p>
+                    <a data-uk-modal="{target:'#bio-nicky-van-foreest'}">More information</a>
+                    <div id="bio-nicky-van-foreest" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/nicky_van_foreest.jpeg" alt="Nicky van Foreest" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Nicky van Foreest</span>
+                            <p class="uk-text-bold">Simulation and optimization of business processes with python</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Nicky van Foreest' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/bob_voorneveld.jpg');"></div>
+                    <h2>Bob Voorneveld</h2>
+                    <p class="uk-text-bold">Implement Gmail api in our CMS system</p>
+                    <a data-uk-modal="{target:'#bio-bob-voorneveld'}">More information</a>
+                    <div id="bio-bob-voorneveld" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/bob_voorneveld.jpg" alt="Bob Voorneveld" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Bob Voorneveld</span>
+                            <p class="uk-text-bold">Implement Gmail api in our CMS system</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Bob Voorneveld' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/ot_de_wiljes.jpeg');"></div>
+                    <h2>Ot de Wiljes</h2>
+                    <p class="uk-text-bold">Computational Neuroscience</p>
+                    <a data-uk-modal="{target:'#bio-ot-de-wiljes'}">More information</a>
+                    <div id="bio-ot-de-wiljes" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/ot_de_wiljes.jpeg" alt="Ot de Wiljes" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Ot de Wiljes</span>
+                            <p class="uk-text-bold">Computational Neuroscience</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Ot de Wiljes' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/oscar_vilaplana.jpeg');"></div>
+                    <h2>Òscar Vilaplana</h2>
+                    <p class="uk-text-bold">Orchestrating Python projects using CoreOS</p>
+                    <a data-uk-modal="{target:'#bio-oscar-vilaplana'}">More information</a>
+                    <div id="bio-oscar-vilaplana" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/oscar_vilaplana.jpeg" alt="Òscar Vilaplana" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Òscar Vilaplana</span>
+                            <p class="uk-text-bold">Orchestrating Python projects using CoreOS</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>Engineer at SpotMe. Passionate about clean architecture and code, Python, Go, NodeJS, piano, short fiction and recumbent biking.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/emil_loer.jpeg');"></div>
+                    <h2>Emil Loer</h2>
+                    <p class="uk-text-bold">Leveraging RPython For Efficient Real-Time Audio Processing</p>
+                    <a data-uk-modal="{target:'#bio-emil-loer'}">More information</a>
+                    <div id="bio-emil-loer" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/emil_loer.jpeg" alt="Emil Loer" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Emil Loer</span>
+                            <p class="uk-text-bold">Leveraging RPython For Efficient Real-Time Audio Processing</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Emil Loer' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/erik_groeneveld.jpeg');"></div>
+                    <h2>Erik Groeneveld</h2>
+                    <p class="uk-text-bold">Generators</p>
+                    <a data-uk-modal="{target:'#bio-erik-groeneveld'}">More information</a>
+                    <div id="bio-erik-groeneveld" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/erik_groeneveld.jpeg" alt="Erik Groeneveld" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Erik Groeneveld</span>
+                            <p class="uk-text-bold">Generators</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Erik Groeneveld' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/gijs_molenaar.jpeg');"></div>
+                    <h2>Gijs Molenaar</h2>
+                    <p class="uk-text-bold">Scientific computing with Django and Docker</p>
+                    <a data-uk-modal="{target:'#bio-gijs-molenaar'}">More information</a>
+                    <div id="bio-gijs-molenaar" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/gijs_molenaar.jpeg" alt="Gijs Molenaar" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Gijs Molenaar</span>
+                            <p class="uk-text-bold">Scientific computing with Django and Docker</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>When I was a kid I wanted to become a bicycle repair man. Now I'm working at the Anton Pannekoek Institute as a scientific software engineer for the AARTFAAC project, which is also fun. Although I'm living in Amsterdam this year I'll be a lot in South Africa working on software for the Square Kilometre Array. In my spare time I make beer and music.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/thomas_levine.jpeg');"></div>
+                    <h2>Thomas Levine</h2>
+                    <p class="uk-text-bold">Data acquisition with Vlermv database</p>
+                    <a data-uk-modal="{target:'#bio-thomas-levine'}">More information</a>
+                    <div id="bio-thomas-levine" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/thomas_levine.jpeg" alt="Thomas Levine" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Thomas Levine</span>
+                            <p class="uk-text-bold">Data acquisition with Vlermv database</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Thomas Levine' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/pieter_hintjens.jpeg');"></div>
+                    <h2>Pieter Hintjens</h2>
+                    <p class="uk-text-bold">ZeroMQ (Keynote)</p>
+                    <a data-uk-modal="{target:'#bio-pieter-hintjens'}">More information</a>
+                    <div id="bio-pieter-hintjens" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/pieter_hintjens.jpeg" alt="Pieter Hintjens" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Pieter Hintjens</span>
+                            <p class="uk-text-bold">ZeroMQ (Keynote)</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Pieter Hintjens' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/unknown.png');"></div>
+                    <h2>Niels Hageman</h2>
+                    <p class="uk-text-bold">Reliable distributed task scheduling</p>
+                    <a data-uk-modal="{target:'#bio-niels-hageman'}">More information</a>
+                    <div id="bio-niels-hageman" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/unknown.png" alt="Niels Hageman" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Niels Hageman</span>
+                            <p class="uk-text-bold">Reliable distributed task scheduling</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Niels Hageman' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/saul_ibarra_corretge.jpeg');"></div>
+                    <h2>Saúl Ibarra Corretgé</h2>
+                    <p class="uk-text-bold">Python, WebRTC and You</p>
+                    <a data-uk-modal="{target:'#bio-saul-ibarra-corretge'}">More information</a>
+                    <div id="bio-saul-ibarra-corretge" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/saul_ibarra_corretge.jpeg" alt="Saúl Ibarra Corretgé" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Saúl Ibarra Corretgé</span>
+                            <p class="uk-text-bold">Python, WebRTC and You</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>Saghul is a Python and C developer who loves anything and everything that has to do with sockets.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/berco_beute.jpeg');"></div>
+                    <h2>Berco Beute</h2>
+                    <p class="uk-text-bold">Python in a decentralized future</p>
+                    <a data-uk-modal="{target:'#bio-berco-beute'}">More information</a>
+                    <div id="bio-berco-beute" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/berco_beute.jpeg" alt="Berco Beute" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Berco Beute</span>
+                            <p class="uk-text-bold">Python in a decentralized future</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>CTO (Paylogic), hacker, musician and all-round internet technology enthusiast Berco Beute has been inspired by the possibilities of software since the eigthies. His enthusiasm show no signs of decline. Au contraire.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/henk_doornbos.jpeg');"></div>
+                    <h2>Henk Doornbos</h2>
+                    <p class="uk-text-bold">Contract languages based on Python</p>
+                    <a data-uk-modal="{target:'#bio-henk-doornbos'}">More information</a>
+                    <div id="bio-henk-doornbos" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/henk_doornbos.jpeg" alt="Henk Doornbos" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Henk Doornbos</span>
+                            <p class="uk-text-bold">Contract languages based on Python</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>Senior Architect and Head of Tech (Paylogic). Lecturer (Groningen University and Hanze university). Miller (De Hoop, Haren).
+For the past 30 years Henk Doornbos has been passionate about methods, tools and techniques that help to create, maintain and manage complicated software systems.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="with-shadow uk-border-circle speakers-image" style="background-image: url('/images/speakers/herman_balsters.jpeg');"></div>
+                    <h2>Herman Balsters</h2>
+                    <p class="uk-text-bold">Python in: Processes, data, contracts</p>
+                    <a data-uk-modal="{target:'#bio-herman-balsters'}">More information</a>
+                    <div id="bio-herman-balsters" class="uk-modal">
+                        <div class="uk-modal-dialog uk-text-justify">
+
+                            <img class="with-shadow" width="80" src="/images/speakers/herman_balsters.jpeg" alt="Herman Balsters" />
+                            <span class="uk-text-middle uk-text-bold uk-margin-left">Herman Balsters</span>
+                            <p class="uk-text-bold">Python in: Processes, data, contracts</p>
+
+                            
+
+                            <p class="uk-text-bold">BIO information</p>
+                                <p>There's no information on this speaker yet.</p>
+                                <p>Are you 'Herman Balsters' or do you know him/her well?
+                                   You can help us by creating a pull request on <a href="https://github.com/paylogic/pygrunn.org/" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</div>
+<div id="location" class="block">
+    <div class="uk-container uk-container-center">
+        <section class="location">
+            <div class="uk-text-center"><i class="uk-icon-location-arrow uk-icon-large uk-icon-heading"></i></div>
+            <h1 class="uk-text-center uk-heading-large">Location</h1>
+            <div class="uk-grid uk-grid-width-small-1-1 uk-grid-width-medium-1-2 uk-grid-width-large-1-2 uk-margin-large-top">
+                <div class="uk-text-justify">
+                    <p>PyGrunn 2015 will take place on May 22nd at <a target="_blank" href="http://www.groningerforum.nl/">Groninger Forum</a>, the old Forum Images building, in Groningen.</p>
+                    <p>Groninger Forum is a cultural living and working environment. A place where artists, creative people, entrepreneurs and enthusiasts can meet. A perfect spot for PyGrunn! It is a 3-minute walk from the central train station and in the heart of the city.</p>
+                    <dl class="uk-description-list">
+                        <dt>Address</dt><dd>Hereplein 73, 9711 GD Groningen</dd>
+                        <dt>Phone</dt><dd>+31 50 312 0433</dd>
+                    </dl>
+                </div>
+                <div>
+                    <iframe class="uk-display-inline-block with-shadow uk-iframe" width="650" height="450" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2389.229039563185!2d6.56732708584506!3d53.213741552525384!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c9cd5415af180f%3A0x65968e2a9c8e427!2sHereplein+73!5e0!3m2!1sen!2s!4v1391815059572"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div id="tickets" class="block text-contrast bg-dark">
+    <div class="uk-container uk-container-center">
+        <section class="tickets">
+            <div class="uk-text-center"><i class="uk-icon-ticket uk-icon-large uk-icon-heading uk-icon-heading-dark"></i></div>
+            <h1 class="uk-text-center uk-heading-large">Tickets</h1>
+            <div id="tickets-info" class="uk-text-center uk-margin-large-top">
+              <iframe class="uk-width-small-2-3 uk-container-center" height="760px"
+                src="https://frontoffice.paylogic.nl/?event_id=102308&point_of_sale_id=12325">
+              </iframe>
+            </div>
+        </section>
+    </div>
+</div>
+<div id="schedule" class="block with-border">
+    <div class="uk-container uk-container-center">
+        <section class="schedule">
+            <div class="uk-text-center"><i class="uk-icon-calendar uk-icon-large uk-icon-heading"></i></div>
+            <h1 class="uk-text-center uk-heading-large">Schedule 2015</h1>
+            <div class="uk-text-center">
+                <iframe class="uk-display-inline-block with-shadow uk-iframe" width="749" height="800" src="https://docs.google.com/spreadsheet/pub?key=0AjHV_JJcy6-3dG43dUtBSGxEeUVnUU1jYUR5UDV3QWc&output=html"></iframe>
+            </div>
+        </section>
+    </div>
+</div>
+<div id="sprints" class="block with-border">
+    <div class="uk-container uk-container-center">
+        <section class="sprints">
+            <div class="uk-text-center"><i class="uk-icon-cogs uk-icon-large uk-icon-heading"></i></div>
+            <h1 class="uk-text-center uk-heading-large">Sprints</h1>
+            <p class="uk-text-justify uk-margin-large-top">After the success of
+            last years sprints, this year PyGrunn will again sprint! We feel
+            that sprints are an excellent way to contribute to the open source
+            community from which PyGrunn emerged.
+            As most of us are software developers, it's important to be able to sit face to face
+            and work together on open-source projects on which we worked during the year. Discuss
+            the future, build new features, fix bugs, and hack on some experiment. The sprints are
+            also a great opportunity to hang around with peers, talk tech, and have fun!</p>
+            <div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-2 uk-text-justify" data-uk-grid-match="{row: true}" data-uk-grid-margin>
+                <div>
+                    <h2>Topics</h2>
+                    <p>We are currently deciding on the topics to sprint on. Please contribute by voting for existing topics or propose your own using the form. In the latter case you should have a <span class="uk-text-bold">core</span> project developer in mind that can join the sprint.</p>
+                </div>
+                <div class="uk-text-center">
+                    <iframe class="uk-display-inline-block with-shadow uk-iframe" width="650" height="450" src="https://docs.google.com/forms/d/1JwGzxp4wQ26tz6ot7ghDnitmuRSY07Y9HsF5apjsPEk/viewform?embedded=true"></iframe>
+                </div>
+                <div>
+                    <h2>Venue</h2>
+                    <p>Sprints are planned at May 23 and 24 (the saturday and sunday after the conference day) from 10:00 till 22:00 at the <a target="_blank" href="http://www.launchcafe.nl/">Launch Cafe Groningen</a>.</p>
+                    <p>More photos of the venue can be found
+                      <a target="_blank" href="https://www.google.nl/maps/preview/uv?hl=en&pb=!1s0x47c9cd5411a1c11f:0x4012099406d8c3ff!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://plus.google.com/109704811741801104489/photos?hl%3Den%26socfid%3Dweb:lu:kp:placepageimage%26socpid%3D1!5slaunchcafe+groningen+-+Google+Search&sa=X&ei=5qv2Uo3XPMTmywPN_4L4BA&ved=0CK8BEKIqMA0">here</a>
+                      and <a target="blank_" href="https://www.google.nl/maps/@53.214201,6.56918,3a,75y,82.89h,90t/data=!3m5!1e1!3m3!1s5ls9HXTKC-gAAAQIt2XjmQ!2e0!3e2!6m1!1e1">here</a>.
+                      Μore information about this wonderful venue can be found
+                      at the <a target="_blank" href="http://www.launchcafe.nl/">venue's site</a>.
+                      The venue is equipped with wifi, projectors, and whiteboards. Coffee, tea, 
+                      beer and snacks will be provided.</p>
+                    <p>Join us and make that change. Be a grunner amongst PyGrunners!</p>
+                </div>
+                <div>
+                    <h2>Schedule</h2>
+                    <p>The schedule is the same for both sprint days.</p>
+                    <dl class="uk-description-list">
+                        <dt>10:00-10:30</dt><dd>Forming teams, announcing things to do</dd>
+                        <dt>10:30-13:00</dt><dd>Sprinting!</dd>
+                        <dt>13:00-14:00</dt><dd>Lunch @ cafe nearby</dd>
+                        <dt>14:00-18:00</dt><dd>Sprinting!</dd>
+                        <dt>18:00-18:30</dt><dd>Team reports</dd>
+                        <dt>18:30-22:00</dt><dd>Closing the day [Party]</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-3" data-uk-grid-margin>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="lc_group" href="/theme/images/gallery/lc_door.jpg">
+                            <img src="/theme/images/gallery/lc_door.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="lc_group" href="/theme/images/gallery/lc_inside.jpg">
+                            <img src="/theme/images/gallery/lc_inside.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="lc_group" href="/theme/images/gallery/lc_outside.jpg">
+                            <img src="/theme/images/gallery/lc_outside.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div id="rfp" class="block text-contrast bg-dark">
+    <div class="uk-container uk-container-center">
+        <section class="rfp">
+            <div class="uk-text-center"><i class="uk-icon-lightbulb-o uk-icon-large uk-icon-heading uk-icon-heading-dark"></i></div>
+            <h1 class="uk-text-center uk-heading-large">Request For Proposals 2015</h1>
+            <div class="uk-text-justify uk-margin-large-top">
+                <p>This is your chance to share your work with the PyGrunn community!
+                Let us know your proposal for a talk at PyGrunn 2015.</p>
+
+                <p>All talks are 30 minutes and should inspire, impress and inform.
+                Try to use the full 30 minutes to inspire your audience and save the
+                discussions for the time between talks.</p>
+                <h2>Topics</h2>
+                <p>As the tagline says, PyGrunn is about Python and friends, so talks don't
+                have to be about Python per se. But they should have some connection to Python.
+                The audience is technically quite skilled so adjust your talk accordingly.
+                This year two themes have our special interest:
+                    <ol>
+                        <li>Python in science and education: Python is an excellent tool for
+                        acquiring both knowledge and skills. Whether it is learning how to
+                        programm or analyse large datasets for bio-medical research. It scales
+                        well from simple beginnings to complex experimental work.</li>
+                        <li>Python and big data: 'Big data' is an umbrella concept that houses
+                        a large number of quite exciting topics. Python has many qualities that
+                        make it a great fit for big data work and research.</li>
+                    </ol>
+                We are looking for talks and posters/papers about these two topics.
+                <h2>Posters</h2>
+                <p>Poster and paper sessions are new this year. We will make room for displaying
+                a number of posters and papers in the venue. Authors can show their papers/posters
+                and give more information in person to interested parties. Submit your paper/poster
+                by filling out the form below and mail the paper/poster separately to
+                <a href="mailto:info@pygrunn.org">info@pygrunn.org</a>.</p>
+                <p><strong>Speakers get free access</strong>. You don't have to buy a ticket if you
+                speak at PyGrunn!</p>
+                <p>Please mail any questions you may have to <a href="mailto:info@pygrunn.org">info@pygrunn.org</a>.
+                You can send us any remarks you may have using the <i>additional information</i> field in the form.</p>
+            </div>
+            <div class="uk-text-center">
+                <iframe class="uk-display-inline-block with-shadow uk-iframe" width="650" height="450" src="http://goo.gl/forms/KLZoB54jJQ"></iframe>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div id="tips" class="block with-border">
+    <div class="uk-container uk-container-center">
+        <section class="tips">
+            <div class="uk-text-center"><i class="uk-icon-check uk-icon-large uk-icon-heading"></i></div>
+            <h1 class="uk-text-center uk-heading-large">Share your tips for 2015</h1>
+            <div class="uk-text-center">
+                <iframe class="uk-display-inline-block with-shadow uk-iframe" width="655" height="580" src="http://goo.gl/forms/0PlnXwHB2t"></iframe>
+            </div>
+        </section>
+    </div>
+</div>
+<div id="sponsor" class="block with-border">
+    <div class="uk-container uk-container-center">
+        <section class="sponsor">
+            <div class="uk-text-center"><i class="uk-icon-thumbs-up uk-icon-large uk-icon-heading"></i></div>
+            <h1 class="uk-text-center uk-heading-large">Become A Sponsor</h1>
+            <h2 class="uk-margin-large-top">Why we need sponsors</h2>
+            <div class="uk-grid uk-grid-width-1-1 uk-grid-width-large-1-2 uk-text-justify" data-uk-grid-match data-uk-grid-margin>
+                <div>
+                    <p>Pygrunn is made possible through the efforts of volunteers, speakers and participants,
+                    but also by the financial support of a growing number of sponsors. With your contribution,
+                    within five years, Pygrunn has become the busiest and most visited Python Conference
+                    in the Netherlands.</p>
+                    <p>With more than 200 participants and international speakers, for
+                    one entire day, Groningen could call itself the Python capital of the Netherlands.
+                    Your contribution would give PyGrunn a solid financial base in order to achieve everything
+                    mentioned above.</p>
+                </div>
+                <div>
+                    <p>With your contribution, we can:</p>
+                    <ul class="uk-list uk-list-space list-icon list-icon-chevron-right">
+                        <li>Keep the ticket prices low.</li>
+                        <li>Provide a decent location to host Pygrunn.</li>
+                        <li>Reimburse the travel and accommodation costs of our international speakers.</li>
+                        <li>Provide catering.</li>
+                        <li>Live stream the talks for those at home.</li>
+                        <li>And of course to print our extremely popular t-shirts.</li>
+                    </ul>
+                    <p>If you are interested and wish to get more information, then please contact us in <a href="mailto:info@pygrunn.org">info@pygrunn.org</a>.</p>
+                </div>
+            </div>
+            <h2>Sponsor Packages</h2>
+            <div class="uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-4" data-uk-grid-margin>
+                <div>
+                    <h3>Bronze <span>(€500)</span></h3>
+                    <ul class="uk-list uk-list-space list-icon list-icon-chevron-right">
+                        <li>Small logo on the PyGrunn website linked to your own website</li>
+                        <li>Small logo on folders and banners</li>
+                        <li>2 admission tickets</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Silver <span>(€1500)</span></h3>
+                    <ul class="uk-list uk-list-space list-icon list-icon-chevron-right">
+                        <li>Your name mentioned on the PyGrunn website</li>
+                        <li>Medium logo on the PyGrunn website linked to your own website</li>
+                        <li>Medium logo on folders and banners</li>
+                        <li>Vacancy flyer</li>
+                        <li>4 admission tickets</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Gold <span>(€3000)</span></h3>
+                    <ul class="uk-list uk-list-space list-icon list-icon-chevron-right">
+                        <li>Your name mentioned on the PyGrunn website</li>
+                        <li>Introduction section about you on the PyGrunn website</li>
+                        <li>Big logo on the PyGrunn website linked to your own website</li>
+                        <li>Big logo on folders and banners</li>
+                        <li>Vacancy flyer</li>
+                        <li>Participation in organisation of the PyGrunn</li>
+                        <li>6 admission tickets</li>
+                        <li>One of the venues named after you</li>
+                        <li>Reference during the Pygrunn monthly (6 times a year)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Kryptonite <span>(€5000)</span></h3>
+                    <ul class="uk-list uk-list-space list-icon list-icon-chevron-right">
+                        <li>Your name mentioned on the PyGrunn website</li>
+                        <li>Introduction section about you on the PyGrunn website</li>
+                        <li>Big logo on the PyGrunn website linked to your own website</li>
+                        <li>Big logo on folders and banners</li>
+                        <li>Vacancy flyer</li>
+                        <li>Participation in organisation of the PyGrunn</li>
+                        <li>Keynote speaker</li>
+                        <li>8 admission tickets</li>
+                        <li>Main venue named after you</li>
+                        <li>Reference during the Pygrunn monthly (6 times a year)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div id="about" class="block text-contrast bg-dark">
+    <div class="uk-container uk-container-center">
+        <section class="about">
+            <div class="uk-text-center"><i class="uk-icon-info uk-icon-large uk-icon-heading uk-icon-heading-dark"></i></div>
+            <h1 class="uk-text-center uk-heading-large">About</h1>
+            <p class="uk-text-justify uk-margin-large-top">PyGrunn is the largest conference in The Netherlands dedicated to Python and Friends.
+            PyGrunn has always been a special gathering for enthousiasts and for those who wish
+            to share their knowledge and passion about Python and not only.
+            Its purpose is to provide a pleasant experience to every attendant.
+            We are both excited and proud to present our sponsors for PyGrunn 2014,
+            the anniversary and annual edition of our t-shirts,
+            a list of former PyGrunn speakers, and a few photographic moments of PyGrunn 2013.
+            </p>
+            <h2>Sponsors</h2>
+            <h3>Kryptonite</h3>
+            <p>Your company could be here!</p>
+            <h3>Gold</h3>
+            <div class="uk-grid uk-grid-width-1-4 uk-grid-width-medium-1-4 uk-grid-width-large-1-4" data-uk-grid-margin>
+                <div>
+                    <a class="paylogic-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.paylogic.com" target="_blank">
+                        <span>Paylogic</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="getlogic-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.getlogic.nl/" target="_blank">
+                        <span>Getlogic</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="spindle-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.wearespindle.com/" target="_blank">
+                        <span>Spindle</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="media2b-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.media2b.net" target="_blank">
+                        <span>Media2B</span>
+                    </a>
+                </div>
+            </div>
+            <h3>Silver</h3>
+            <div class="uk-grid uk-grid-width-1-6 uk-grid-width-medium-1-6 uk-grid-width-large-1-6" data-uk-grid-margin>
+                <div>
+                    <a class="maykin-media-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.maykinmedia.nl/en/" target="_blank">
+                        <span>Maykin Media</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="optiver-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.optiver.com/amsterdam/" target="_blank">
+                        <span>Optiver</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="voys-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.voys.nl/" target="_blank">
+                        <span >Voys</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="crop-r-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.crop-r.com/" target="_blank">
+                        <span >Crop-R</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="resello-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.resello.com/" target="_blank">
+                        <span >Resello</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="minddistrict-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.minddistrict.com/professional/" target="_blank">
+                        <span >Minddistrict</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="dmc-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.digitalmediacentre.com/" target="_blank">
+                        <span >DMC</span>
+                    </a>
+                </div>
+            </div>
+            <h3>Bronze</h3>
+            <div class="uk-grid uk-grid-width-1-10 uk-grid-width-medium-1-10 uk-grid-width-large-1-10" data-uk-grid-margin>
+                <div>
+                    <a class="academic-transfer-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="https://www.academictransfer.com/" target="_blank">
+                        <span>Academic Transfer</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="peperzaken-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="https://www.peperzaken.nl/" target="_blank">
+                        <span>Peperzaken</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="experty-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.experty.com/nl/" target="_blank">
+                        <span>Experty</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="and-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.and.com" target="_blank">
+                        <span>AND</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="launchcafe-logo sponsor-img uk-display-inline-block uk-vertical-align-middle text-hidden" href="http://www.launchcafe.nl" target="_blank">
+                        <span>Launchcafe</span>
+                    </a>
+                </div>
+            </div>
+
+            <h2>Former Speakers</h2>
+            <h3>2014</h3>
+            <ul class="uk-list uk-list-space list-col-2 list-icon list-icon-chevron-right">
+                <li><span class="uk-text-bold">Jeff Knupp</span> - Writing idiomatic Python (keynote)</li>
+                <li><span class="uk-text-bold">Armin Ronacher</span> - SSL, CAs and keeping your stuff safe</li>
+                <li><span class="uk-text-bold">Kenneth Reitz</span> - Documentation is King</li>
+                <li><span class="uk-text-bold">Killian Evang</span> - Produce: Makefiles without the annoying bits</li>
+                <li><span class="uk-text-bold">Pawel Lewicki</span> - Sphinx + Robot Framework = documentation as result of functional testing</li>
+                <li><span class="uk-text-bold">Rodrigo Bernardo Pimentel</span> - A first look at async.io</li>
+                <li><span class="uk-text-bold">Guido Kollerie</span> - Slice &amp; Dice: Data Analysis using Pandas</li>
+                <li><span class="uk-text-bold">Erik Romijn</span> - Keeping Django chained: top security concerns for Django websites</li>
+                <li><span class="uk-text-bold">Valerio Basile</span> - Bad habits in academic code</li>
+                <li><span class="uk-text-bold">Gijs Molenaar</span> - SQLAlchemy and astronomical data</li>
+                <li><span class="uk-text-bold">Dmitrijs Milajevs</span> - Python for data scientists</li>
+                <li><span class="uk-text-bold">Oscar Vilaplana</span> - Scaling your system</li>
+                <li><span class="uk-text-bold">Panel:</span> - Dangers of centralization. Options and solutions</li>
+                <li><span class="uk-text-bold">Saul Ibarra Corretge</span> - asyncio internals</li>
+                <li><span class="uk-text-bold">Avi Flax</span> - The impedance mismatch of web microframeworks</li>
+                <li><span class="uk-text-bold">Denis Bilenko</span> - Gevent, threads &amp; async frameworks</li>
+                <li><span class="uk-text-bold">Berco Beute</span> - Python friends: CoffeeScript &amp; AngularJS</li>
+                <li><span class="uk-text-bold">Job Ganzevoort &amp; Douwe van der Meij</span> - From zero to hero - Professional Django setup, deploy and maintain</li>
+                <li><span class="uk-text-bold">Dirk Zittersteyn</span> - Advanced continuous integration</li>
+                <li><span class="uk-text-bold">Kenneth Reitz</span> - Growing Open Source Seeds</li>
+                <li><span class="uk-text-bold">Henk Doornbos</span> - Processes, Data and the rest</li>
+                <li><span class="uk-text-bold">Greg Kowal</span> - Geoprocessing with python</li>
+                <li><span class="uk-text-bold">Artur Barseghyan</span> - Modern authentication in Python web applications</li>
+            </ul>
+            <h3>2013</h3>
+            <ul class="uk-list uk-list-space list-col-2 list-icon list-icon-chevron-right">
+                <li><span class="uk-text-bold">Holger Krekel</span> - Re-inventing Python packaging &amp; testing (keynote)</li>
+                <li><span class="uk-text-bold">Daniël &amp; Gideon de Kok</span> - What Python can learn from Haskell</li>
+                <li><span class="uk-text-bold">Luuk van der Velden</span> - Best practices for the lone coder syndrome</li>
+                <li><span class="uk-text-bold">Peter Odding</span> - Reliable deployment of large Python applications</li>
+                <li><span class="uk-text-bold">Oscar Vilaplana</span> - Handling massive traffic with Python</li>
+                <li><span class="uk-text-bold">Álex González</span> - Python and Scala smoke the peace pipe</li>
+                <li><span class="uk-text-bold">Berco Beute</span> - REST API design</li>
+                <li><span class="uk-text-bold">Armin Ronacher</span> - A year with MongoDB</li>
+                <li><span class="uk-text-bold">Oleg Pidsadnyi</span> - Behaviour driven design with PyTest</li>
+                <li><span class="uk-text-bold">Remco Wendt</span> - Component architectures in Python</li>
+                <li><span class="uk-text-bold">Mark Vletter</span> - Lean prototyping</li>
+                <li><span class="uk-text-bold">Emil Loer</span> - Python raytracing</li>
+                <li><span class="uk-text-bold">Douwe van der Meij</span> - MVC revisited with Diazo</li>
+                <li><span class="uk-text-bold">Jan-Jaap Driessen</span> - Fan/theme</li>
+                <li><span class="uk-text-bold">Gijs Molenaar</span> - LOFAR &lt;3 Python</li>
+                <li><span class="uk-text-bold">Alessandro Molina</span> -  High Performance Web Applications with Python and TurboGears</li>
+                <li><span class="uk-text-bold">Dmitrijs Milajevs</span> - Real Time discussion retrieval from Twitter</li>
+                <li><span class="uk-text-bold">Kenneth Reitz</span> - Python for humans</li>
+            </ul>
+            <h3>2012</h3>
+            <ul class="uk-list uk-list-space list-col-2 list-icon list-icon-chevron-right">
+                <li><span class="uk-text-bold">Michael Bayer</span> - SQLAlchemy (keynote)</li>
+                <li><span class="uk-text-bold">Bram Noordzij</span> - Amazon Web Services. The good, bad &amp; ugly</li>
+                <li><span class="uk-text-bold">Alexandros Kanterakis</span> - PyPedia</li>
+                <li><span class="uk-text-bold">Oleg Pidsadnyi</span> - Large number of markers on Google Maps</li>
+                <li><span class="uk-text-bold">Emil Loer</span> - Musical Python</li>
+                <li><span class="uk-text-bold">Douwe van der Meij</span> - AOP in Python API design</li>
+                <li><span class="uk-text-bold">Remco Wendt</span> - Profiling</li>
+                <li><span class="uk-text-bold">Miguel Araujo</span> - Django Uni-forms</li>
+                <li><span class="uk-text-bold">Henk Doornbos &amp; Berco Beute</span> - Chronic Pythonic</li>
+                <li><span class="uk-text-bold">Ivor Bosloper</span> - GeoDjango</li>
+                <li><span class="uk-text-bold">Oscar Vilaplana</span> - Tornado in depth</li>
+                <li><span class="uk-text-bold">Laurence de Jong</span> - Continuous integration</li>
+                <li><span class="uk-text-bold">Alexander Solovyov</span> - Go: Python + /theme typing?</li>
+                <li><span class="uk-text-bold">Niels Hageman</span> - Distributed job scheduling</li>
+                <li><span class="uk-text-bold">Armin Ronacher</span> - A fresh look at HTTP from Python</li>
+                <li><span class="uk-text-bold">Reinout van Rees</span> - Optimize &amp; automate your Python life</li>
+                <li><span class="uk-text-bold">Dan Tofan &amp; Spyros Ioakeimidis</span> - Python tools for making architectural decisions</li>
+                <li><span class="uk-text-bold">Rick Oost</span> - Generalized traversals</li>
+            </ul>
+            <h3>2011</h3>
+            <ul class="uk-list uk-list-space list-col-2 list-icon list-icon-chevron-right">
+                <li><span class="uk-text-bold">Armin Ronacher</span> - The state of Python and the web (keynote)</li>
+                <li><span class="uk-text-bold">Henk Doorbos</span> - Making large, untested code bases testable</li>
+                <li><span class="uk-text-bold">Reinout van Rees</span> - Practical project automation</li>
+                <li><span class="uk-text-bold">Jobert Abma</span> - The ten commandments of Security</li>
+                <li><span class="uk-text-bold">Berco Beute</span> - Growing up Pythonically</li>
+                <li><span class="uk-text-bold">Alexander Solovyov</span> - hg and complex development processes</li>
+                <li><span class="uk-text-bold">Òscar Vilaplana</span> - ØMQ</li>
+                <li><span class="uk-text-bold">Pieter Noordhuis</span> - Redis in practice</li>
+                <li><span class="uk-text-bold">Duco Dokter</span> - NLTK: natural language processing with Python</li>
+                <li><span class="uk-text-bold">Gideon de Kok &amp; Tom de Vries</span> - Mobile Architectures</li>
+                <li><span class="uk-text-bold">Kim Chee Leong</span> - Buildout</li>
+                <li><span class="uk-text-bold">Emil Loer</span> - Embeddng Python interpreter in Ruby and vice versa</li>
+                <li><span class="uk-text-bold">Rix Groenboom</span> - MijnOverheid: performance testing in practice</li>
+            </ul>
+            <h3>2010</h3>
+            <ul class="uk-list uk-list-space list-col-2 list-icon list-icon-chevron-right">
+                <li><span class="uk-text-bold">Ivan Sagalaev</span> (keynote)</li>
+                <li><span class="uk-text-bold">Ivan Metzlar</span></li>
+                <li><span class="uk-text-bold">Erik Huisman &amp; Aldert Greydanus</span></li>
+                <li><span class="uk-text-bold">Michiel Prins &amp; Jobert Abma</span></li>
+                <li><span class="uk-text-bold">Tom de Vries &amp; Gideon de Kok</span></li>
+                <li><span class="uk-text-bold">Oscar Vilaplana</span></li>
+                <li><span class="uk-text-bold">Oleg Pidsadnyi</span></li>
+                <li><span class="uk-text-bold">Merijn Terheggen</span> - Minimal Viable Products</li>
+                <li><span class="uk-text-bold">Henk Doornbos</span> - Python and hardware programming</li>
+                <li><span class="uk-text-bold">Berco Beute</span> - A Python's Life?</li>
+                <li><span class="uk-text-bold">Bart jan Wesselink</span> - Advanced Payment Routing</li>
+                <li><span class="uk-text-bold">Tim Bakker</span> - Green Parking</li>
+            </ul>
+            <h2>Photographic Moments of PyGrunn 2013</h2>
+            <div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-3" data-uk-grid-margin>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="pg_group" href="/theme/images/gallery/pg_2013_1.jpg">
+                            <img src="/theme/images/gallery/pg_2013_1.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="pg_group" href="/theme/images/gallery/pg_2013_2.jpg">
+                            <img src="/theme/images/gallery/pg_2013_2.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="pg_group" href="/theme/images/gallery/pg_2013_3.jpg">
+                            <img src="/theme/images/gallery/pg_2013_3.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="pg_group" href="/theme/images/gallery/pg_2013_4.jpg">
+                            <img src="/theme/images/gallery/pg_2013_4.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="pg_group" href="/theme/images/gallery/pg_2013_5.jpg">
+                            <img src="/theme/images/gallery/pg_2013_5.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="pg_group" href="/theme/images/gallery/pg_2013_6.jpg">
+                            <img src="/theme/images/gallery/pg_2013_6.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="pg_group" href="/theme/images/gallery/pg_2013_7.jpg">
+                            <img src="/theme/images/gallery/pg_2013_7.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="pg_group" href="/theme/images/gallery/pg_2013_8.jpg">
+                            <img src="/theme/images/gallery/pg_2013_8.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="pg_group" href="/theme/images/gallery/pg_2013_9.jpg">
+                            <img src="/theme/images/gallery/pg_2013_9.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="pg_group" href="/theme/images/gallery/pg_2013_10.jpg">
+                            <img src="/theme/images/gallery/pg_2013_10.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="pg_group" href="/theme/images/gallery/pg_2013_11.jpg">
+                            <img src="/theme/images/gallery/pg_2013_11.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="with-full-border">
+                        <a class="fancybox uk-overlay with-shadow" rel="pg_group" href="/theme/images/gallery/pg_2013_12.jpg">
+                            <img src="/theme/images/gallery/pg_2013_12.jpg">
+                            <div class="uk-overlay-area"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div id="movies" class="block with-border">
+    <div class="uk-container uk-container-center">
+        <section class="movies">
+            <div class="uk-text-center"><i class="uk-icon-video-camera uk-icon-large uk-icon-heading"></i></div>
+            <h1 class="uk-text-center uk-heading-large">Movies 2014</h1>
+            <div class="uk-grid uk-grid-width-1-1 uk-text-center" data-uk-grid-margin>
+                <div>
+                    <h2>Jeff Knupp - Keynote: Writing Idiomatic Python</h2>
+                    <iframe class="uk-iframe" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/8eBHHhMqkDc" frameborder="0"></iframe>
+                </div>
+                <div>
+                    <h2>Armin Ronacher - SSL, CAs and keeping your stuff safe</h2>
+                    <iframe class="uk-iframe" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/z80s_Iaoyuw" frameborder="0"></iframe>
+                </div>
+                <div>
+                    <h2>Avi Flax - The impedance mismatch of Web Microframeworks</h2>
+                    <iframe class="uk-iframe" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/HGpDHBzErkg" frameborder="0"></iframe>
+                </div>
+                <div>
+                    <h2>Saúl Ibarra Corretgé - asyncio internals</h2>
+                    <iframe class="uk-iframe" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/HppNu0-ANYw" frameborder="0"></iframe>
+                </div>
+                <div>
+                    <h2>Oscar Vilaplana - Scaling your system</h2>
+                    <iframe class="uk-iframe" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/i4qkGxlPXwU" frameborder="0"></iframe>
+                </div>
+                <div>
+                    <h2>Panel Discussion - Dangers of centralization. Options and solutions.</h2>
+                    <iframe class="uk-iframe" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/oKBdhhac3Rs" frameborder="0"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+    <div id="footer" class="block-small">
+        <div class="uk-container uk-container-center">
+            <section class="footer uk-text-center">
+                &copy;2015 PyGrunn
+            </section>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/theme/javascript/uikit.min.js"></script>
+    <script src="/theme/javascript/sticky.min.js"></script>
+    <script src="/theme/javascript/jquery.fancybox.pack.js"></script>
+    <script src="/theme/javascript/application.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-48221565-2', 'pygrunn.org');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Quattrocento:400,700);
+@import url(http://fonts.googleapis.com/css?family=Patua+One);
+
+/* General */
+body{background:#F0F0F0;color:#312A1E;font-family:'Quattrocento',serif;font-size:16px;line-height:22px;}
+.uk-text-large{font-size:32px;line-height:42px;}
+.uk-text-muted{color:#AAAAAA !important;}
+h1,h2,h3,h4,h5,h6{font-family:'Patua One',cursive;color:#312A1E;}
+a,.uk-link{color:#F1505A;}
+a:hover,.uk-link:hover{color:#312A1E;text-decoration:none;}
+.bg-dark a:hover,.bg-dark .uk-link:hover{color:#FFFFFF;}
+*:focus,a:focus{outline:none;}
+.uk-text-small{font-size:12px;}
+
+/* Extra classes */
+.text-contrast *:not(i):not(a){color:#E4E5E2 !important;}
+.block-large{padding:85px 0;}
+.block-small{padding:25px 0;}
+.block{padding:50px 0;}
+.with-shadow{box-shadow:0 1px 10px rgba(0,0,0,0.1);-moz-box-shadow:0 1px 10px rgba(0,0,0,0.1);-webkit-box-shadow:0 1px 10px rgba(0,0,0,0.1);}
+.with-border{border-bottom:1px solid #FFFFFF;}
+.with-full-border{border:1px solid #FFFFFF;}
+.bg-dark{background:#312A1E;}
+.uk-iframe{max-width:100%;}
+.text-hidden{text-indent:100%;overflow:hidden;white-space:nowrap;}
+.list-col-2{column-count:2;-webkit-column-count:2;-moz-column-count:2;}
+
+/* List Icon */
+.list-icon li{padding-left:12px;position:relative;}
+.list-icon li:before{font-family:FontAwesome;position:absolute;left:0;top:0;font-size:11px;}
+.list-icon-chevron-right li:before{content:"\f054";}
+
+/* Icons */
+.uk-icon-large:before{font-size:40px;vertical-align:middle;line-height:80px;}
+.uk-icon-heading{width:80px;height:80px;background:#312A1E;color:#E4E5E2;border-radius:50%;}
+.uk-icon-heading-dark{background:#E4E5E2;color:#312A1E;}
+
+/* Logo */
+.logo{width:197px;height:60px;background: no-repeat 0 0;margin:10px 0;background-size:contain;}
+
+/* Layouts */
+.uk-offcanvas-page{position:absolute;}
+.headerbar{position:fixed;top:0;width:100%;z-index:1000;}
+.fullscreen{background: no-repeat 50% 50%;background-size:cover;position:relative;}
+#feature{font-family:'Patua One',cursive;}
+
+/* Sponsors */
+.sponsor-images{background:rgba(11,51,63,0.7);position:absolute;bottom:0;left:0;width:100%;padding:15px 0;}
+.sponsor-images-small{background:rgba(11,51,63,1);}
+.sponsor-img{background-repeat:no-repeat;background-position:0 0;background-size:contain;height:auto;max-width:100%}
+.paylogic-logo{width:150px;height:38px;background-image:url(../images/sponsors/paylogic_light.png);}
+.getlogic-logo{width:150px;height:38px;background-image:url(../images/sponsors/getlogic_light.png);}
+.minddistrict-logo{width:140px;height:53px;background-image:url(../images/sponsors/minddistrict_light.png);}
+.goldmund-logo{width:300px;height:44px;background-image:url(../images/sponsors/goldmund_light.png);}
+.media2b-logo{width:200px;height:38px;background-image:url(../images/sponsors/media2b_light.png);}
+.at-logo{width:95px;height:44px;background-image:url(../images/sponsors/at_light.png);}
+.voys-logo{width:100px;height:38px;background-image:url(../images/sponsors/voys_light.png);}
+.launchcafe-logo{width:90px;height:31px;background-image:url(../images/sponsors/launchcafe_light.png);}
+.experty-logo{width:90px;height:31px;background-image:url(../images/sponsors/experty_light.png);}
+.maykin-media-logo{width:100px;height:48px;background-image:url(../images/sponsors/maykin_media_light.png);}
+.optiver-logo{width:100px;height:32px;background-image:url(../images/sponsors/optiver_light.png);}
+.peperzaken-logo{width:90px;height:21px;background-image:url(../images/sponsors/peperzaken_light.png);}
+.academic-transfer-logo{width:80px;background-image:url(../images/sponsors/at_light.png);}
+.resello-logo{width:100px;height:32px;background-image:url(../images/sponsors/resello_light.png);}
+.crop-r-logo{width:100px;height:32px;background-image:url(../images/sponsors/crop-r_light.png);}
+.spindle-logo{width:150px;height:60px;background-image:url(../images/sponsors/spindle_light.png);}
+.dmc-logo{width:80px;height:32px;background-image:url(../images/sponsors/dmc_light.png);}
+.and-logo{width:70px;height:32px;background-image:url(../images/sponsors/and_light.png);}
+
+/* Navbar */
+.uk-navbar{background:#0B333F;color:#FFFFFF;}
+.uk-navbar-nav > li{margin:20px 0 20px 5px;}
+.uk-navbar-nav > li > a{color:#FFFFFF;font-family:'Patua One',cursive;font-size:16px;}
+.uk-navbar-nav > li > a:focus{background:none;color:#ffffff;}
+.uk-navbar-nav > li:hover > a,.uk-navbar-nav > li.uk-open > a,.uk-navbar-nav > li > a.uk-active{background:#DC1B17;color:#FFFFFF;border-radius:3px;}
+.uk-navbar-toggle{color:#FFFFFF;background:#DC1B17;border-radius:3px;font-size:20px;margin:20px 0;}
+.uk-navbar-toggle:hover,.uk-navbar-toggle:focus{color:#DC1B17;background:#FFFFFF;}
+
+/* Panel */
+.uk-panel-box{padding:0;color:#312A1E;background:none;}
+.uk-panel-box .uk-panel-title{color:#312A1E;font-size:24px;line-height:30px;}
+.uk-panel-box > * + .uk-panel-title{margin-top:25px;}
+
+/* DL */
+.uk-description-list-horizontal > dt{width:100px;}
+.uk-description-list-horizontal > dd{margin-left:120px;}
+
+/* Social */
+.social > a{color:#E4E5E2;font-size:46px;margin-right:20px;margin-top:10px;}
+.social > a:last-child{margin-right:0;}
+.social > a:hover{text-decoration:none;}
+
+/* Overlay */
+.uk-overlay{overflow:hidden;}
+.uk-overlay img{transform-origin:left bottom 0;-ms-transform-origin:left bottom 0;-webkit-transform-origin:left bottom 0;transition:all 0.4s ease-in-out 0s;-webkit-transition:all 0.4s ease-in-out 0s;}
+.uk-overlay:hover .uk-overlay-area{left:0;}
+.uk-overlay:hover img{transform:scale(1.2) translate(-20px);-ms-transform:scale(1.2) translate(-20px);-webkit-transform:scale(1.2) translate(-20px);}
+
+/* Modal */
+.uk-modal-dialog{box-shadow:0 1px 10px rgba(0,0,0,0.1);-moz-box-shadow:0 1px 10px rgba(0,0,0,0.1);-webkit-box-shadow:0 1px 10px rgba(0,0,0,0.1);}
+
+/* Speakers */
+.speakers-image{margin:0 auto;width:160px;height:160px;overflow:hidden;background-repeat:no-repeat;background-position:50% 50%;background-size:cover;}
+#panel-inner-image{background-color:#ECECEC;}
+
+/* Sticky Custom */
+.uk-sticky{position:absolute;width:100%;}
+.sticky-top h2{text-align:center;color:#FFFFFF;margin:0 auto;max-width:500px;background:#0B333F;padding:15px;border:1px solid #ffffff;box-shadow:0 1px 10px rgba(0,0,0,0.1);-moz-box-shadow:0 1px 10px rgba(0,0,0,0.1);-webkit-box-shadow:0 1px 10px rgba(0,0,0,0.1);border-radius:3px;}
+
+/* Only Phones */
+@media (max-width:768px) {
+    /* General */
+    .uk-text-large{font-size:20px;line-height:28px;}
+    h3 > span,.uk-h3 > span{display:block;}
+
+    /* Extra classes */
+    .uk-width-small-1-1{width:100%}
+    .uk-width-small-1-2{width:50%}
+    .block-large{padding:65px 0;}
+    .block-small{padding:20px 0;}
+    .block{padding:35px 0;}
+    .uk-list-col-2{column-count:1;-webkit-column-count:1;-moz-column-count:1;}
+
+    /* Logo */
+    .uk-logo{width:131px;height:40px;margin:20px 0;}
+
+    /* Sponsors */
+    .sponsor-img{margin:5px !important;}
+    /*.at-logo{max-width: 60px;}*/
+}
+
+/* Hi-res Images */
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2){
+    /* Sponsor Logos */
+    .paylogic-logo{background-image:url(../images/sponsors/paylogic_light@2x.png);}
+    .getlogic-logo{background-image:url(../images/sponsors/getlogic_light@2x.png);}
+    .goldmund-logo{background-image:url(../images/sponsors/goldmund_light@2x.png);}
+    .media2b-logo{background-image:url(../images/sponsors/media2b_light@2x.png);}
+    .minddistrict-logo{background-image:url(../images/sponsors/minddistrict_light@2x.png);}
+    .at-logo{background-image:url(../images/sponsors/at_light@2x.png);}
+    .voys-logo{background-image:url(../images/sponsors/voys_light@2x.png);}
+    .launchcafe-logo{background-image:url(../images/sponsors/launchcafe_light@2x.png);}
+    .experty-logo{background-image:url(../images/sponsors/experty_light@2x.png);}
+    .peperzaken-logo{background-image:url(../images/sponsors/peperzaken_light@2x.png);}
+    .heroku-logo{background-image:url(../images/sponsors/heroku_light@2x.png);}
+    .yourholding-logo{background-image:url(../images/sponsors/yourholding_light@2x.png);}
+}
